@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "whisper_transcribe"
+version = "0.1.0"
+description = "A simple batch transcription tool using OpenAI Whisper"
+dependencies = [
+    "openai-whisper",
+    "python-docx",
+]
+
+[project.scripts]
+# This creates a command you can run directly in the terminal
+whisper-run = "whisper_transcribe.transcriber:main"

@@ -1,0 +1,5 @@
+.venv/
+__pycache__/
+*.docx
+*.wav
+.DS_Store
