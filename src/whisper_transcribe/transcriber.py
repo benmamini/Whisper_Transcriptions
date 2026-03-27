@@ -4,7 +4,11 @@ import docx
 import argparse
 
 
-def transcribe_wav(source_dir, dest_dir):
+def transcribe_wav(source_dir, dest_dir, model=None):
+    if model is None:
+          print("No model provided. Loading Whisper model now...")
+          model = whisper.load_model("medium")
+
     # 1. Convert string paths to Path objects
     source_path = Path(source_dir)
     dest_path = Path(dest_dir)
@@ -13,8 +17,8 @@ def transcribe_wav(source_dir, dest_dir):
     dest_path.mkdir(parents=True, exist_ok=True)
 
     # 2. Load the model
-    print("Loading Whisper model (this might take a moment)...")
-    model = whisper.load_model("medium")
+
+
 
     # 3. Find and process each .wav file in the source directory
     wav_files = list(source_path.glob("*.wav"))
@@ -54,4 +58,4 @@ if __name__ == "__main__":
     transcribe_wav(args.source, args.dest)
 
 #Terminal Execution
-#python Whisper_Transcriptions.py "C:\Users\benma\Documents\audio_test_input" "C:\Users\benma\Documents\audio_test_output"
+#python transcriber.py "C:\Users\benma\Documents\audio_test_input" "C:\Users\benma\Documents\audio_test_output"
