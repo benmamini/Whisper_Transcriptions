@@ -28,10 +28,10 @@ pip install git+[https://github.com/benma/Whisper_Transcriptions.git](https://gi
 
 ## Usage
 
-As a terminal command:
+#As a terminal command:
 whisper-run "C:\path\to\your\wav_files" "C:\path\to\save\docx_files"
 
-As a python library:
+#As a python library:
 
 from whisper_transcribe.transcriber import transcribe_wav
 
