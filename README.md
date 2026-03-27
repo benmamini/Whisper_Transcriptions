@@ -34,6 +34,7 @@ whisper-run "C:\path\to\your\wav_files" "C:\path\to\save\docx_files"
 #As a python library:
 
 from whisper_transcribe.transcriber import transcribe_wav
+import whisper
 
 shared_model = whisper.load_model("medium")
 
